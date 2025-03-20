@@ -27,12 +27,12 @@ const [error, setError] = useState<string | null>(null);
     e.preventDefault();
     setError(null);
 
-    const jobData = {
+    const jobData = JSON.stringify({
       jobTitle,
       salaryPerMonth,
       timingFrom: `${timingFrom} ${timingFromPeriod}`,
       timingTo: `${timingTo} ${timingToPeriod}`,
-    };
+    });
 
     const encodedPayload = btoa(JSON.stringify(jobData));
 
