@@ -8,12 +8,11 @@
     "allowImportingTsExtensions": true,
     "noEmit": true,
     "baseUrl": ".",
-    "outDir": "../build/client",
+    "outDir": "dist",
     "module": "esnext",
     "target": "ESNext",
     "moduleResolution": "Node",
     "types": ["vite/client"]
   },
   "include": ["src"],
-  "exclude": ["../server"]
 }
