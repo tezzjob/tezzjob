@@ -117,12 +117,11 @@ const ShopKeeperLogin = () => {
     setError(null); // Reset error state
     setDisplayMail(email);
 
-    const encodedPayload = btoa(
-      JSON.stringify({
-        ownerEmail: email,
-        password: password.trim(),
-      })
-    );
+    const payload = JSON.stringify({
+      ownerEmail: email,
+      password: password.trim(),
+    });
+    const encodedPayload = btoa(JSON.stringify(payload));
     try {
       const response = await fetch(
         `${API_ENDPOINT_URL}?path=shopkeeper/login&method=POST&payload=${encodedPayload}`,
