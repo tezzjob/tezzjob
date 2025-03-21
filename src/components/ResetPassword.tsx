@@ -32,7 +32,8 @@ const ResetPassword = () => {
       return;
     }
 
-    const encodedPayload = btoa(JSON.stringify({ email: userEmail, password }));
+    const payload = JSON.stringify({ email: userEmail, password });
+    const encodedPayload = btoa(JSON.stringify(payload));
     try {
       const response = await fetch(
         `${API_ENDPOINT_URL}?path=reset-password&method=POST&payload=${encodedPayload}`,

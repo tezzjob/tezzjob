@@ -157,10 +157,11 @@ const ShopKeeperLogin = () => {
     setIsFPLoading(true);
     setError(null); // Reset error state
 
+    const payload = JSON.stringify({
+      email: email,
+    });
     const encodedPayload = btoa(
-      JSON.stringify({
-        email: email,
-      })
+      JSON.stringify(payload)
     );
     try {
       const response = await fetch(
